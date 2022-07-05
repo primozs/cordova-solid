@@ -1,0 +1,49 @@
+{
+  "name": "com.niceclouds.app",
+  "displayName": "DemoApp",
+  "version": "1.0.0",
+  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "postinstall": "yarn build",
+    "dev:electron": "yarn build && cordova run electron --nobuild",
+    "dev:browser": "yarn build && cordova run browser -- --live-reload",
+    "dev:android": "cordova run android --device",
+    "build:electron": "yarn build && cordova build electron",
+    "build:electron:debug": "yarn build && cordova build electron —debug",
+    "build:electron:release": "yarn build && cordova build electron —release",
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Primoz Susa",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "solid-js": "^1.4.2"
+  },
+  "devDependencies": {
+    "@types/cordova": "^0.0.34",
+    "cordova-android": "^10.1.2",
+    "cordova-browser": "^6.0.0",
+    "cordova-electron": "^3.1.0",
+    "cordova-plugin-device": "^2.1.0",
+    "typescript": "^4.6.4",
+    "vite": "^2.9.9",
+    "vite-plugin-solid": "^2.2.6"
+  },
+  "cordova": {
+    "platforms": [
+      "electron",
+      "android",
+      "browser"
+    ],
+    "plugins": {
+      "cordova-plugin-device": {}
+    }
+  }
+}
